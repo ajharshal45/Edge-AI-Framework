@@ -1,0 +1,2 @@
+[console_scripts]
+edgeai = edgeai.EdgeAI:main

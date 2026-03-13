@@ -29,6 +29,7 @@ setup(
         "numpy>=1.21",
         "psutil>=5.8",
         "matplotlib>=3.4",
+        "threadpoolctl>=2.0",
     ],
 
     classifiers=[

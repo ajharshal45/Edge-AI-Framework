@@ -104,29 +104,40 @@ def get_cpu_frequency():
 #  Device classification
 # ──────────────────────────────────────────────────────────
 
-def classify_device(ram_mb):
+def classify_device(ram_mb, cpu_cores=None):
     """
-    Classify a device into an edge category based on RAM.
-
+    Classify a device into an edge category based on RAM and CPU cores.
+    
+    Uses both RAM and CPU cores for more accurate classification.
+    A Raspberry Pi 4 has 4GB RAM but only 4 cores at low frequency,
+    so it should be classified differently from a laptop with 16GB and 8 cores.
+    
     Args:
         ram_mb (float): Total RAM in megabytes.
-
+        cpu_cores (int, optional): Number of CPU cores.
+        
     Returns:
         str: One of 'ultra_edge', 'edge', 'mid_edge', 'high_edge'.
-
-    Raises:
-        ValueError: If ram_mb is negative.
     """
     if ram_mb < 0:
         raise ValueError(f"RAM cannot be negative: {ram_mb}")
-
-    if ram_mb < _ULTRA_EDGE_MAX_RAM:
+    
+    # Use cores=1 as default if not provided
+    cores = cpu_cores if cpu_cores is not None else 1
+    
+    # Classification logic using both RAM and cores
+    if ram_mb < 256:
         return "ultra_edge"
-    elif ram_mb < _EDGE_MAX_RAM:
+    elif ram_mb < 512:
         return "edge"
-    elif ram_mb < _MID_EDGE_MAX_RAM:
+    elif ram_mb < 2048:
+        return "mid_edge"
+    elif ram_mb < 8192 and cores <= 4:
+        # Devices like Raspberry Pi 4: decent RAM but limited cores
+        # Examples: RPi 4 (4GB, 4 cores), Jetson Nano (4GB, 4 cores)
         return "mid_edge"
     else:
+        # True high performance: laptop, desktop, Jetson Xavier
         return "high_edge"
 
 
@@ -154,7 +165,7 @@ def get_device_profile():
     cores = get_cpu_cores()
     freq = get_cpu_frequency()
     plat = get_platform()
-    device_class = classify_device(ram)
+    device_class = classify_device(ram, cores)
 
     return {
         "ram_mb": ram,

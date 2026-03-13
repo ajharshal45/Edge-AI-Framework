@@ -30,18 +30,18 @@ _SAMPLE_INPUTS = {
         [68, 115, 36.6, 97, 1],
     ],
     "smartcity": [
-        [150, 45, 0.7, 8, 1],
-        [300, 20, 0.9, 17, 0],
-        [50, 60, 0.3, 6, 1],
-        [200, 35, 0.8, 12, 1],
-        [400, 15, 0.95, 18, 0],
+        [150, 45, 0.7, 1],
+        [300, 20, 0.9, 2],
+        [50, 60, 0.3, 1],
+        [200, 35, 0.8, 3],
+        [400, 15, 0.95, 4],
     ],
     "environment": [
-        [32, 65, 35, 50, 400],
-        [28, 80, 120, 180, 800],
-        [35, 45, 15, 25, 350],
-        [22, 90, 200, 300, 1200],
-        [30, 55, 50, 70, 500],
+        [32, 65, 35, 400],
+        [28, 80, 120, 800],
+        [35, 45, 15, 350],
+        [22, 90, 200, 1200],
+        [30, 55, 50, 500],
     ],
 }
 
@@ -261,7 +261,13 @@ def compare_with_cloud_baseline(benchmark_results):
         return
 
     avg_edge = sum(r["avg_latency_ms"] for r in benchmark_results) / len(benchmark_results)
-    avg_cloud = round(avg_edge * 15, 1)
+    
+    # Realistic cloud simulation:
+    # minimum 50ms network round trip + actual inference time
+    # edge latency is just local compute, cloud adds network overhead
+    cloud_network_overhead_ms = 50.0
+    avg_cloud = round(avg_edge + cloud_network_overhead_ms, 1)
+    speedup = round(avg_cloud / avg_edge, 0)
 
     print()
     print("  Edge AI vs Cloud AI Comparison")
@@ -273,7 +279,7 @@ def compare_with_cloud_baseline(benchmark_results):
     print(f"  {'Internet Needed':<20}{'NO':<14}{'YES':<14}")
     print(f"  {'Privacy':<20}{'100%':<14}{'At Risk':<14}")
     print("  " + "═" * 46)
-    print(f"\n  ⚡ Edge AI is {avg_cloud / avg_edge:.0f}× faster than Cloud AI")
+    print(f"\n  ⚡ Edge AI is {speedup:.0f}× faster than Cloud AI")
     print(f"  🔒 Edge AI transfers 0 bytes — full data privacy")
     print()
 

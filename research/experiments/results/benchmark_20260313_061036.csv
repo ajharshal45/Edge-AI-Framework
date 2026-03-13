@@ -1,0 +1,4 @@
+domain,model_name,device_class,ram_mb,cpu_cores,platform,n_runs,avg_latency_ms,min_latency_ms,max_latency_ms,model_size_kb,data_transferred_bytes,timestamp
+healthcare,neural_network,high_edge,23960.06,16,Windows,25,0.25,0.089,0.787,89.4,0,2026-03-13T00:40:36.029467+00:00
+smartcity,neural_network,high_edge,23960.06,16,Windows,25,0.116,0.067,0.372,85.0,0,2026-03-13T00:40:36.042311+00:00
+environment,neural_network,high_edge,23960.06,16,Windows,25,0.114,0.062,0.325,87.4,0,2026-03-13T00:40:36.054974+00:00

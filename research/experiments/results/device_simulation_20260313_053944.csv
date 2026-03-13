@@ -1,0 +1,13 @@
+Device,DeviceLabel,Domain,Model,Latency_ms,Memory_MB
+raspberry_pi_zero,RPi Zero,healthcare,random_forest,15.42,0.01
+raspberry_pi_zero,RPi Zero,smartcity,random_forest,37.66,0.0
+raspberry_pi_zero,RPi Zero,environment,random_forest,37.35,0.0
+raspberry_pi_3,RPi 3B+,healthcare,random_forest,19.41,0.0
+raspberry_pi_3,RPi 3B+,smartcity,random_forest,19.65,0.0
+raspberry_pi_3,RPi 3B+,environment,random_forest,20.09,0.0
+raspberry_pi_4,RPi 4 (4GB),healthcare,random_forest,9.05,0.0
+raspberry_pi_4,RPi 4 (4GB),smartcity,random_forest,8.02,0.0
+raspberry_pi_4,RPi 4 (4GB),environment,random_forest,5.54,0.0
+laptop,Laptop,healthcare,neural_network,0.22,0.01
+laptop,Laptop,smartcity,neural_network,0.19,0.0
+laptop,Laptop,environment,neural_network,0.25,0.0
