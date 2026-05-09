@@ -1,0 +1,10 @@
+domain,model_name,device_class,ram_mb,cpu_cores,platform,n_predictions,avg_latency_ms,min_latency_ms,max_latency_ms,model_size_kb,accuracy,avg_confidence_pct,data_transferred_bytes,timestamp
+healthcare,logistic,high_edge,23960.06,16,Windows,100,0.043,0.03,0.197,1.22,0.76,91.89,0,2026-03-12T20:55:07.523079+00:00
+healthcare,random_forest,high_edge,23960.06,16,Windows,100,2.789,1.494,5.23,121.98,0.97,98.4,0,2026-03-12T20:55:08.183418+00:00
+healthcare,neural_network,high_edge,23960.06,16,Windows,100,0.123,0.052,0.481,89.45,0.96,97.05,0,2026-03-12T20:55:08.219680+00:00
+smartcity,logistic,high_edge,23960.06,16,Windows,100,0.052,0.03,0.333,1.22,0.91,88.31,0,2026-03-12T20:55:08.238513+00:00
+smartcity,random_forest,high_edge,23960.06,16,Windows,100,1.982,1.486,5.607,120.26,1.0,96.8,0,2026-03-12T20:55:08.652511+00:00
+smartcity,neural_network,high_edge,23960.06,16,Windows,100,0.095,0.052,0.757,89.45,0.98,90.01,0,2026-03-12T20:55:08.680464+00:00
+environment,logistic,high_edge,23960.06,16,Windows,100,0.039,0.03,0.2,1.22,0.92,98.66,0,2026-03-12T20:55:08.694939+00:00
+environment,random_forest,high_edge,23960.06,16,Windows,100,2.879,1.493,7.466,72.6,1.0,100.0,0,2026-03-12T20:55:09.302586+00:00
+environment,neural_network,high_edge,23960.06,16,Windows,100,0.125,0.051,0.558,89.45,1.0,99.83,0,2026-03-12T20:55:09.337032+00:00

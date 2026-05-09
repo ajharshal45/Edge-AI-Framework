@@ -1,0 +1,13 @@
+Device,DeviceLabel,Domain,Model,Latency_ms,Memory_MB
+raspberry_pi_zero,RPi Zero,healthcare,logistic,8.0,0.0
+raspberry_pi_zero,RPi Zero,smartcity,logistic,8.0,0.0
+raspberry_pi_zero,RPi Zero,environment,logistic,8.0,0.0
+raspberry_pi_3,RPi 3B+,healthcare,logistic,4.0,0.0
+raspberry_pi_3,RPi 3B+,smartcity,logistic,4.0,0.0
+raspberry_pi_3,RPi 3B+,environment,logistic,4.0,0.0
+raspberry_pi_4,RPi 4 (4GB),healthcare,random_forest,6.16,0.01
+raspberry_pi_4,RPi 4 (4GB),smartcity,random_forest,5.82,0.0
+raspberry_pi_4,RPi 4 (4GB),environment,random_forest,3.24,0.0
+laptop,Laptop,healthcare,neural_network,0.19,0.01
+laptop,Laptop,smartcity,neural_network,0.08,0.0
+laptop,Laptop,environment,neural_network,0.07,0.0
