@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+.venv/
+venv/
+env/
+
+# Models / exports
+*.edgeai
+*.h.bak
+
+# Data
+*.csv
+!python/edgeflow/datasets/builtin/*.csv
+!examples/**/*.csv
+!research/**/*.csv
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Arduino
+*.elf
+*.hex
+*.bin
+
+# EdgeFlow session / generated files
+.edgeflow_session.pkl
+project_codebase.txt
+consolidate_codebase.py
